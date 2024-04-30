@@ -12,6 +12,7 @@
     --big-container-margin: 2vw;
     --project-margin: 1vw;
     --small-font-color: #7d7d7d;
+    --shadow: 2px 5px 5px #CCCCCC;
 }
 
 .svg {
@@ -109,7 +110,7 @@ input {
     grid-template-columns: auto 0.9fr auto;
     align-items: center;
     padding-bottom: var(--project-margin);
-	box-shadow: 1px 5px 5px #CCCCCC;
+	box-shadow: var(--shadow);
     margin-bottom: 2px;
 }
 
@@ -156,7 +157,7 @@ button {
 }
 
 .cards {
-    box-shadow: inset 5px 0px 0px 0px #FFD400;
+    box-shadow: inset 5px 0px 0px 0px #FFD400, var(--shadow);
     border-radius: 10px;
     border-style: none;
     background-color: white;
@@ -202,7 +203,7 @@ button {
     padding: 1vw 2vw 2vw 2vw;
     gap: 1vw;
     border-radius: 10px;
-
+    box-shadow: var(--shadow);
     > :first-child {
         border: none;
     }
@@ -233,6 +234,7 @@ button {
     margin-top: var(--project-margin);
     padding: 2vw;
     gap: 2vh;
+    box-shadow: var(--shadow);
 }
 
 .trend {

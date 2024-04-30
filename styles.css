@@ -1,6 +1,5 @@
 * {
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-    border: 1px black solid;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -11,17 +10,54 @@
     --blue: rgb(38, 161, 255);
 }
 
+.content *{
+    border: 1px black solid;
+}
+
+/* svgs */
+
+.dashboard-item img {
+    height: 3vh;
+    fill: white;
+}
+
+/* sizing */
+
+.svg, .profilepic, .name {
+    margin: var(--svg-margins);
+}
+
+.dashboard {
+    font-size: 1.5rem;
+    img {
+        height: 2rem;
+        margin: var(--svg-margins) calc(0.85 * var(--svg-margins));
+    }
+}
+
+/* grid/flex */
+
+.dashboard-item {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    font-weight: 600;
+    color: white;
+    max-height: 3rem;
+}
+
 .container {
     height: 100vh;
     display: grid;
     grid-template: 1fr 1fr 8fr / 1fr 4fr;
 }
 
-
 .sidebar {
     grid-area: 1 / 1 / 4 / 1;
     display: grid;
-    grid-template-rows: 1fr 4fr 2fr 4fr;
+    grid-template-rows: 1fr 3fr 6fr;
+    background-color: var(--blue);
+    margin-right: 2vw;
 }
 
 .mainbar {
@@ -30,9 +66,11 @@
 }
 
 .helpbar {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    align-content: start;
+    display: flex;
+    /* grid-template-rows: repeat(3, 1fr); */
+    flex-direction: column;
+    align-items: start;
+    margin-top: 4vh;
 }
 
 input {
@@ -49,10 +87,6 @@ input {
     display: grid;
     grid-template-columns: auto 1fr auto auto auto;
     align-items: center;
-}
-
-.svg, .profilepic, .name {
-    margin: var(--svg-margins);
 }
 
 .profilepic {

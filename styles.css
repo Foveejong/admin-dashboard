@@ -11,6 +11,7 @@
     --svg-height: 3vh;
     --big-container-margin: 2vw;
     --project-margin: 1vw;
+    --small-font-color: #7d7d7d;
 }
 
 .content * {
@@ -160,7 +161,7 @@ button {
 
 .cards {
     box-shadow: inset 5px 0px 0px 0px #FFD400;
-    border-radius: 5px;
+    border-radius: 10px;
     border-style: none;
     background-color: white;
     padding: 2vw 2vw 0 2vw;
@@ -168,7 +169,7 @@ button {
     grid-template-rows: 2fr 1fr;
     p {
         font-size: 0.8rem;
-        color: #7d7d7d;
+        color: var(--small-font-color);
         margin-top: 0.3rem;
     }
 }
@@ -186,7 +187,7 @@ button {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: 3vw;
 }
 
 .announcements {
@@ -196,10 +197,29 @@ button {
 }
 
 .announcement-cards {
+    background-color: white;
+    margin-top: var(--project-margin);
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1vw 2vw 2vw 2vw;
+    gap: 1vw;
+    border-radius: 10px;
+
+    > :first-child {
+        border: none;
+    }
+}
+
+.announcement {
+    border-top: 1px solid black;
+    padding-top: 2vh;
+    & p {
+        font-size: 0.8rem;
+        color: rgb(163, 163, 163);
+        margin-top: 0.3rem;
+    }
 }
 
 .trending {
